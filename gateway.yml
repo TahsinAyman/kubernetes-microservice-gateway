@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservice-ingress
+  annotations:
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /school(/|$)(.*)
+            pathType: Exact
+            backend:
+              service:
+                name: school-service
+                port:
+                  number: 8080
+          - path: /student(/|$)(.*)
+            pathType: Exact
+            backend:
+              service:
+                name: student-service
+                port:
+                  number: 8080
+      host: nuplul.com
