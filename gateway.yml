@@ -9,18 +9,18 @@ spec:
   rules:
     - http:
         paths:
-          - path: /school(/|$)(.*)
-            pathType: Exact
+          - path: /school
+            pathType: Prefix
             backend:
               service:
                 name: school-service
                 port:
-                  number: 8080
-          - path: /student(/|$)(.*)
-            pathType: Exact
+                  number: 8001
+          - path: /student
+            pathType: Prefix
             backend:
               service:
                 name: student-service
                 port:
-                  number: 8080
+                  number: 8002
       host: nuplul.com
