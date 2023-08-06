@@ -23,5 +23,5 @@ spec:
                 name: student-service
                 port:
                   number: 8002
-      host: nuplul.com
+      host: 1202-118-179-27-132.ngrok-free.app
 
